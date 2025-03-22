@@ -1,5 +1,4 @@
-import Header from '@/components/layout/header';
-import CustomSwitch from '../components/shared/customSwitch';
+import Header from '@/components/layout/Header';
 
 export default function Home() {
   return (
