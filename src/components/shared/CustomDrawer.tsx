@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import {
   Drawer,
   DrawerClose,
@@ -14,30 +17,51 @@ import CustomSwitch from '@/components/shared/CustomSwitch';
 
 export const CustomDrawer = () => {
   return (
-    <>
-      <Drawer direction="left">
-        <DrawerTrigger
-          className="hover:text-primary transition text-muted-foreground cursor-pointer"
-          aria-label="Open menu"
-        >
-          <Menu size={20} />
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader>
-            <div className="flex flex-row justify-between items-center">
-              <DrawerTitle>REVAULT</DrawerTitle>
+    <Drawer direction="left">
+      <DrawerTrigger
+        className="hover:text-primary transition text-muted-foreground cursor-pointer"
+        aria-label="Open menu"
+      >
+        <Menu size={24} />
+      </DrawerTrigger>
 
-              <DrawerClose className="cursor-pointer">{<X />}</DrawerClose>
-            </div>
-            <DrawerDescription>Select one of the categories </DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter>
-            <div className="flex justify-center">
-              <CustomSwitch />
-            </div>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
+      <DrawerContent className="bg-sidebar border-r w-64 shadow-lg">
+        <DrawerHeader>
+          <div className="flex justify-between items-center">
+            <DrawerTitle className="text-lg font-bold tracking-wide">
+              REVAULT
+            </DrawerTitle>
+            <DrawerClose className="hover:text-destructive cursor-pointer transition">
+              <X size={20} />
+            </DrawerClose>
+          </div>
+          <DrawerDescription className="text-xs text-muted-foreground mt-1">
+            Explore as opções abaixo
+          </DrawerDescription>
+        </DrawerHeader>
+        <hr />
+        <br />
+        <div className="flex flex-col gap-1 px-4 py-2 md:hidden">
+          <Link
+            href="/register-product"
+            className="rounded-md  text-foreground hover:bg-border px-3 py-2 text-sm font-medium transition-colors"
+          >
+            🛒 Sell Here
+          </Link>
+          <Link
+            href="/revault-ai"
+            className="rounded-md text-foreground hover:bg-border px-3 py-2 text-sm font-medium transition-colors"
+          >
+            🤖 Revault AI
+          </Link>
+        </div>
+
+        <DrawerFooter className="mt-auto mb-4">
+          <div className="flex justify-center">
+            <CustomSwitch />
+          </div>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
