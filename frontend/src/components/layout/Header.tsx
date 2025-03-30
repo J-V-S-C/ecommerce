@@ -126,8 +126,9 @@ export default function Header() {
               className="hover:text-primary transition"
               aria-label="Sell your item"
             >
-              <span className="hidden sm:inline">Sell Here</span>
-              <span className="inline sm:hidden">Sell</span>
+              <span className="group flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition cursor-pointer">
+                Sell Here
+              </span>
             </Link>
 
             <Link
@@ -135,8 +136,9 @@ export default function Header() {
               className="hover:text-primary transition"
               aria-label="Revault AI"
             >
-              <span className="hidden sm:inline">Revault AI</span>
-              <span className="inline sm:hidden">AI</span>
+              <span className="group flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition cursor-pointer">
+                Revault AI
+              </span>
             </Link>
           </div>
         </div>
